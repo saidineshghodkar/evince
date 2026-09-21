@@ -1,0 +1,10 @@
+{
+  "name": "pulsefest-2k26",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PulseFest 2K26 technical and cultural festival website",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}

@@ -1,0 +1,2 @@
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:9px 11px;border:1px solid var(--line);background:transparent;color:var(--ink);font:10px var(--mono);text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--coral);color:var(--coral)}html[data-theme="dark"] .theme-toggle{border-color:var(--line)}
+@media(max-width:850px){.theme-toggle{align-self:flex-start}}
