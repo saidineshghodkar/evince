@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVINCE 2K26 — ECE • SKUCET | National Technical & Cultural Fest</title>
+<meta name="description" content="EVINCE 2K26 — Annual National-Level Technical & Cultural Fest by Dept. of ECE, SKUCET Anantapur. 16 events, ₹25,000+ prize pool, 2 days. Where innovation meets imagination.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- preloader -->
+<div id="preloader"><div class="loader-logo">EVINCE 2K26</div><div class="loader-bar"><span></span></div></div>
+
+<!-- ambient layers -->
+<canvas id="particles"></canvas>
+<div class="grid-overlay"></div>
+<div id="cursorGlow"></div>
+
+<!-- navbar -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="brand"><span class="dot"></span>EVINCE<em>2K26</em></a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme"><span>☼</span></button>
+  <button id="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks"></ul>
+</nav>
+
+<!-- HERO + COUNTDOWN -->
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" id="heroEyebrow"></div>
+    <h1 class="hero-title" id="heroTitle"></h1>
+    <div class="hero-sub" id="heroSub"></div>
+    <div class="hero-tag" id="heroTag"></div>
+    <div class="cd-boxes hero-cd">
+      <div class="cd-box"><div class="cd-num" id="cdD">00</div><div class="cd-label">Days</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdH">00</div><div class="cd-label">Hours</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdM">00</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdS">00</div><div class="cd-label">Seconds</div></div>
+    </div>
+    <div class="cd-date" id="cdDate"></div>
+    <div class="hero-btns">
+      <a class="btn btn-primary" id="regBtn1" href="#" target="_blank">⚡ REGISTER NOW</a>
+      <a class="btn btn-ghost" href="#events">EXPLORE EVENTS ➤</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</header>
+
+<!-- marquee -->
+<div class="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
+
+<!-- WHY JOIN (BENEFITS) -->
+<section id="whyjoin" style="background:linear-gradient(180deg,transparent,rgba(163,255,18,.04),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">WHY YOU SHOULD JOIN</div>
+      <h2 class="sec-title">BENEFITS OF <span class="accent">EVINCE 2K26</span></h2>
+      <p class="sec-desc">16 events across 2 electrifying days — technical battles, creative showdowns and a grand cultural night. Here is what you take home.</p>
+    </div>
+    <div class="benefits-grid" id="benefitsGrid"></div>
+    <div class="stats-grid reveal" id="whyStats"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow" id="aboutEyebrow"></div>
+      <h2 class="sec-title" id="aboutHeading"></h2>
+      <p class="sec-desc" id="aboutText"></p>
+    </div>
+    <div class="about-feature reveal">
+      <div class="about-copy">
+        <span class="about-kicker">A PLATFORM FOR THE NEXT WAVE</span>
+        <h3>Build boldly. <span class="accent">Connect widely.</span></h3>
+        <p>EVINCE is designed as a meeting point for makers, strategists, creators, and curious minds. Bring an idea, test your instincts, meet your peers, and leave with a sharper sense of what you can build next.</p>
+        <div class="about-highlights">
+          <div><strong>01</strong><span>Live challenges</span></div>
+          <div><strong>02</strong><span>Peer connections</span></div>
+          <div><strong>03</strong><span>Stage-ready moments</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <img src="assets/img/loo.jpeg" alt="Students collaborating in the ECE department" loading="lazy">
+        <span class="visual-label">SKUCET / ECE / 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT SHOWCASE — AUTO + MANUAL SCROLLING IMAGES -->
+<section id="showcase" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.04),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">FESTIVAL SHOWCASE</div>
+      <h2 class="sec-title">EVENT <span class="accent">SPOTLIGHT</span></h2>
+      <p class="sec-desc">A glimpse of the arenas — robotic warfare, prototype expos, circuit forensics and cultural euphoria. Scrolls automatically, or drag / use arrows to explore.</p>
+    </div>
+    <div class="car-wrap reveal">
+      <button class="car-btn prev" id="carPrev" aria-label="previous">‹</button>
+      <div class="car-viewport" id="carViewport"><div class="car-track" id="carTrack"></div></div>
+      <button class="car-btn next" id="carNext" aria-label="next">›</button>
+    </div>
+    <div class="car-hint">⟵ auto-scrolls • drag or use arrows ⟶</div>
+  </div>
+</section>
+
+<!-- EVENTS LIST -->
+<section id="events">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">FESTIVAL ARENAS</div>
+      <h2 class="sec-title">EXPLORE <span class="accent">EVENTS</span></h2>
+      <p class="sec-desc">From high-frequency circuit diagnostics and autonomous robotics races to lateral thinking mysteries and creative spot showdowns.</p>
+    </div>
+    <div class="stats-grid" id="evCounts" style="margin-top:0;margin-bottom:36px"></div>
+    <div class="filter-bar reveal" id="evFilters"></div>
+    <div class="search-wrap reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="evSearch" placeholder="Search events, topics, tech...">
+    </div>
+    <div class="events-grid" id="eventsGrid"></div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" style="background:linear-gradient(180deg,transparent,rgba(124,77,255,.04),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">CHRONOLOGICAL TIMELINE</div>
+      <h2 class="sec-title">EVENT <span class="accent">SCHEDULE</span></h2>
+      <p class="sec-desc">Two days packed with electric innovations, hardware challenges, competitive logic, and grand celebrations.</p>
+    </div>
+    <div class="day-tabs reveal" id="dayTabs"></div>
+    <div class="day-theme reveal" id="dayTheme"></div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.04),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 class="sec-title">EXPLORE <span class="accent">EVENTS</span></h2>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<!-- <section id="sponsors" style="background:linear-gradient(180deg,transparent,rgba(255,45,149,.04),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">INDUSTRY ALLIANCES</div>
+      <h2 class="sec-title">OUR <span class="accent">SPONSORS</span></h2>
+      <p class="sec-desc">Proudly powered by premier electronics enterprises, semiconductor innovators, and regional tech partners.</p>
+    </div>
+    <div class="sp-tier reveal"><div class="sp-grid" id="spTitle"></div></div>
+    <div class="sp-tier reveal"><h4>GOLD SPONSORS</h4><div class="sp-grid" id="spGold"></div></div>
+    <div class="sp-tier reveal"><h4>SILVER SPONSORS</h4><div class="sp-grid" id="spSilver"></div></div>
+    <div class="sp-tier reveal"><h4>ASSOCIATE SPONSORS</h4><div class="sp-grid" id="spAssociate"></div></div>
+    <div class="sp-cta reveal">
+      <p class="sec-desc" style="margin-bottom:18px">Partner with EVINCE 2K26 to showcase your brand to 500+ future engineering leaders.</p>
+      <a class="btn btn-primary" id="sponsorBtn" href="#" target="_blank">BECOME A SPONSOR</a>
+    </div>
+  </div>
+</section> -->
+
+<!-- ORGANIZERS / TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">LEADERSHIP & CONVENORS</div>
+      <h2 class="sec-title">ORGANIZING <span class="accent">TEAM</span></h2>
+      <p class="sec-desc">The visionary committee leads driving EVINCE 2K26 — tap a card to call the organizer directly.</p>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.03))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">CLARIFICATIONS & PROTOCOLS</div>
+      <h2 class="sec-title">FREQUENTLY ASKED <span class="accent">QUESTIONS</span></h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- LOCATION (IFRAME) -->
+<section id="location">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">GEO-COORDINATES LOCKED</div>
+      <h2 class="sec-title">EVENT <span class="accent">LOCATION</span></h2>
+      <p class="sec-desc">Sri Krishnadevaraya University College of Engineering and Technology (SKUCET), NH-44, Anantapur — 5 minutes from the railway station & APSRTC bus stand.</p>
+    </div>
+    <div class="map-frame reveal">
+      <iframe id="mapFrame" title="SKUCET Anantapur — Event Location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Sri+Krishnadevaraya+University+College+of+Engineering+and+Technology+Anantapur+Andhra+Pradesh&output=embed"></iframe>
+    </div>
+    <div class="map-info reveal">
+      <div class="c-icon">⌖</div>
+      <div style="max-width:640px">
+        <b style="color:var(--text);font-family:var(--font-d);letter-spacing:.1em;font-size:14px">SKUCET CAMPUS — MAIN AUDITORIUM & ECE BLOCK</b>
+        <p id="mapAddress" style="margin:6px 0 10px"></p>
+        <a id="mapDir" href="#" target="_blank">GET DIRECTIONS ON GOOGLE MAPS →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.05))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">DIRECT COMMUNICATIONS</div>
+      <h2 class="sec-title">CONTACT <span class="accent">ORGANIZERS</span></h2>
+      <p class="sec-desc">Have queries regarding registration, event guidelines, sponsorship, or accommodations? Reach out directly — or ping us on the WhatsApp button.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal" id="contactInfo"></div>
+      <div class="contact-card reveal" data-d="1">
+        <h3 style="font-family:var(--font-d);letter-spacing:.1em;margin-bottom:20px;font-size:18px">QUICK <span style="color:var(--cyan)">ACTIONS</span></h3>
+        <p style="color:var(--muted);margin-bottom:22px">Registration, spot-event entries and sponsor applications are handled through our official Google Form. Click below — it opens in a new tab.</p>
+        <a class="btn btn-primary btn-block" id="formBtn1" href="#" target="_blank" style="margin-bottom:14px">⚡ OPEN REGISTRATION FORM</a>
+        <a class="btn btn-ghost btn-block" id="waBtn" href="#" target="_blank" style="margin-bottom:14px">✆ CHAT ON WHATSAPP</a>
+        <a class="btn btn-ghost btn-block" id="mailBtn" href="#">✉ EMAIL THE ORGANIZERS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">EVINCE<em>2K26</em></div>
+      <p id="footTag" style="color:var(--cyan);letter-spacing:.14em"></p>
+      <p>Annual National-Level Technical & Cultural Festival organized by the Department of Electronics & Communication Engineering, SKUCET, Anantapur.</p>
+      <div class="socials" id="socials"></div>
+    </div>
+    <div>
+      <h5>NAVIGATION</h5>
+      <ul class="foot-links">
+        <li><a href="#home">› Home</a></li><li><a href="#whyjoin">› Why Join</a></li>
+        <li><a href="#about">› About</a></li><li><a href="#showcase">› Showcase</a></li>
+        <li><a href="#events">› Events</a></li><li><a href="#schedule">› Schedule</a></li>
+        <li><a href="#gallery">› Gallery</a></li>
+        <li><a href="#team">› Organizers</a></li><li><a href="#faq">› FAQ</a></li>
+        <li><a href="#location">› Location</a></li><li><a href="#contact">› Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>SKUCET CAMPUS</h5>
+      <p id="footDept" style="margin-top:0;color:var(--muted);letter-spacing:.2em;font-size:12.5px"></p>
+      <p id="footAddress"></p>
+      <p style="margin-top:14px"><a href="#home" style="color:var(--cyan);letter-spacing:.2em;font-size:13px">↑ RETURN TO TOP</a></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year"></span> EVINCE 2K26 | Department of ECE, SKUCET. All rights reserved.</span>
+    <span>Designed & Engineered by EVINCE Web Team</span>
+  </div>
+</footer>
+
+<!-- whatsapp fab -->
+<a id="waFab" href="#" target="_blank" aria-label="Chat on WhatsApp" title="Chat with EVINCE 2K26 team">
+  <svg viewBox="0 0 32 32"><path d="M16 2.9C8.8 2.9 2.9 8.8 2.9 16c0 2.3.6 4.6 1.8 6.6L2.8 29.2l6.8-1.8c1.9 1.1 4.1 1.7 6.4 1.7 7.2 0 13.1-5.9 13.1-13.1S23.2 2.9 16 2.9zm0 23.9c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1 1.1-3.9-.3-.4c-1.1-1.7-1.6-3.7-1.6-5.7 0-5.9 4.8-10.7 10.7-10.7s10.7 4.8 10.7 10.7-4.7 10.8-10.6 10.8zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- overlays -->
+<div id="lightbox"><button class="lb-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button><img id="lbImg" src="" alt=""><div class="lb-cap" id="lbCap"></div></div>
+<div class="modal" id="eventModal"><div class="modal-box" id="modalBody"></div></div>
+<button id="toTop" title="Back to top">↑</button>
+<div id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
